@@ -12,9 +12,23 @@ module.value("LoggingSvc", function(){
     console.log("Hello");
 });
 
-function headCtrl(AppDataSvc, LoggingSvc) {
-    this.appTitle = AppDataSvc.name;
-    LoggingSvc();
+module.factory("AppDataFactorySvc", function(){
+    return {
+        "name":"Contact App",
+        "Company":"Jain"
+    }
+});
+
+function AppConfig(){
+    this.name = "Jaini";
+    this.age = 20;
+}
+
+module.service("AppDataService", AppConfig);
+
+
+function headCtrl(AppDataService) {
+    this.appTitle = AppDataService.name;
 }
 
 function footerCtrl(AppDataSvc, LoggingSvc){
