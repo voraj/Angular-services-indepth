@@ -1,5 +1,17 @@
 var module = angular.module("ContactApp", []);
 module.controller("ContactCtrl", contactCtrl);
+module.controller("HeaderCtrl", headCtrl);
+module.controller("FooterCtrl", footerCtrl);
+
+module.value("AppTitleSvc","My Contact App");
+
+function headCtrl(AppTitleSvc) {
+    this.appTitle = AppTitleSvc;
+}
+
+function footerCtrl(AppTitleSvc){
+    this.appTitle = AppTitleSvc;
+}
 
 function contactCtrl() {
     this.contacts=[

@@ -6,7 +6,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1>My Contact App</h1>
+
+    <div ng-controller="HeaderCtrl as headerCtrl">
+        <h1>{{headerCtrl.appTitle}}</h1>
+    </div>
     <div class="container" ng-controller="ContactCtrl as ctrl">
         <div class=row">
             <ul class="list-group">
@@ -29,6 +32,11 @@
                 </div>
             </div>
         </div>
+    </div>
+
+
+    <div ng-controller="FooterCtrl as footerCtrl">
+        <h1>{{footerCtrl.appTitle}}</h1>
     </div>
 </body>
 </html>
