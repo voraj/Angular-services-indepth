@@ -3,17 +3,31 @@
     <title>My Contact App</title>
     <script src="angular.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <h1>My Contact App</h1>
     <div class="container" ng-controller="ContactCtrl as ctrl">
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="contact in ctrl.contacts">
-                <p>{{contact.name.first}} + {{contact.name.last}}</p>
-            </li>
-        </ul>
-
+        <div class=row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="contact in ctrl.contacts">
+                    <p>{{contact.name.first}} {{contact.name.last}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img ng-src="{{ctrl.selectedContact.picture.medium}}"></img>
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{ctrl.selectedContact.name.first}}</h4>
+                    <p> Location : </p>
+                    <span>{{ctrl.selectedContact.location.street}} {{ctrl.selectedContact.location.city}}</span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

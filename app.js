@@ -189,4 +189,6 @@ function contactCtrl() {
             "nat":"IE"
         }
     ];
+
+    this.selectedContact = this.contacts[1];
 }
