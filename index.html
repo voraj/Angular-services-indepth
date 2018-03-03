@@ -1,4 +1,4 @@
-<html>
+<html ng-app="ContactApp">
 <head>
     <title>My Contact App</title>
     <script src="angular.js"></script>
@@ -6,8 +6,10 @@
 </head>
 <body>
     <h1>My Contact App</h1>
-    <div ng-controller="ContactController">
-
+    <div ng-controller="ContactCtrl as ctrl">
+        <div ng-repeat="contact in ctrl.contacts">
+            <p>{{contact.name.first}} + {{contact.name.last}}</p>
+        </div>
     </div>
 </body>
 </html>
