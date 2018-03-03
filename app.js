@@ -3,14 +3,17 @@ module.controller("ContactCtrl", contactCtrl);
 module.controller("HeaderCtrl", headCtrl);
 module.controller("FooterCtrl", footerCtrl);
 
-module.value("AppTitleSvc","My Contact App");
+module.value("AppDataSvc",{
+    "name":"Contact App",
+    "Company":"Jain"
+});
 
-function headCtrl(AppTitleSvc) {
-    this.appTitle = AppTitleSvc;
+function headCtrl(AppDataSvc) {
+    this.appTitle = AppDataSvc.name;
 }
 
-function footerCtrl(AppTitleSvc){
-    this.appTitle = AppTitleSvc;
+function footerCtrl(AppDataSvc){
+    this.appTitle = AppDataSvc.name;
 }
 
 function contactCtrl() {
