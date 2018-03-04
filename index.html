@@ -3,14 +3,15 @@
     <title>My Contact App</title>
     <script src="angular.js"></script>
     <script src="app.js"></script>
+    <script src="appConfig.service.js"></script>
+    <script src="appName.service.js"></script>
+    <script src="contact.controller.js"></script>
+    <script src="contactdata.service.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
+<body ng-controller="ContactCtrl as ctrl">
 
-    <div ng-controller="HeaderCtrl as headerCtrl">
-        <h1>{{headerCtrl.appTitle}}</h1>
-    </div>
-    <div class="container" ng-controller="ContactCtrl as ctrl">
+    <div class="container" >
         <div class=row">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="contact in ctrl.contacts" ng-click="ctrl.selectContact($index)()">
@@ -35,8 +36,8 @@
     </div>
 
 
-    <div ng-controller="FooterCtrl as footerCtrl">
-        <h1>{{footerCtrl.appTitle}}</h1>
+    <div>
+        <h1>{{ctrl.appTitle}}</h1>
     </div>
 </body>
 </html>
