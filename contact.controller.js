@@ -2,10 +2,13 @@
     var module = angular.module("ContactApp");
     module.controller("ContactCtrl", contactCtrl);
 
-
     function contactCtrl(ContactDataSvc) {
-        this.contacts=ContactDataSvc.contacts;
-        this.selectedContact = this.contacts[0];
+        var self = this;
+
+        ContactDataSvc.getContacts().then(function (data) {
+                self.contacts= data;
+            });
+
         this.selectContact = function(index){
             this.selectedContact = this.contacts[index];
         }
